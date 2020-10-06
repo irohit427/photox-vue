@@ -1,13 +1,16 @@
 <template>
   <div class="home">
-    <h1>Hello World</h1>
+    <Login />
   </div>
 </template>
 
 <script>
 
+import Login from '../components/Login'
 export default {
   name: 'Home',
-  components: {}
+  components: {
+    Login
+  }
 }
 </script>
