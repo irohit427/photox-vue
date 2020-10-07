@@ -1,10 +1,29 @@
 <template>
   <div id="app">
     <div id="nav">
+      <Navbar />
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import Navbar from './components/Navbar';
+import { mapActions } from 'vuex';
+export default {
+  mounted() {
+    this.authAction();
+  },
+  components: {
+    Navbar
+  },
+  methods: {
+    ...mapActions({
+      authAction: "auth/authAction"
+    })
+  }
+}
+</script>
 
 <style>
 #app {

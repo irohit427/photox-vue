@@ -37,16 +37,17 @@
 
         methods: {
             ...mapActions({
-                loginVue: "auth/login",
-                logotVue: "auth/logout"
+                loginAction: "auth/login",
+                logotAction: "auth/logout"
             }),
 
             async login() {
                 try {
-                    await this.loginVue({
+                    await this.loginAction({
                         username: this.username,
                         password: this.password
                     });
+                    this.$router.push("/albums");
                 } catch (error) {
                     this.error = error;
                 }
